@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "ES6",
+        "target": "es2020",
+        "jsx": "preserve",
+        "checkJs": true,
+        "strictNullChecks": false,
+        "strictFunctionTypes": true,
+        "moduleResolution": "node",
+        "baseUrl": ".",
+        "paths": {
+            "~/*": ["src/*"]
+        }
+    },
+    "exclude": [
+        "node_modules",
+        "**/node_modules/*"
+    ],
+}
