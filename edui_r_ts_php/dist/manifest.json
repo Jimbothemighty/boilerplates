@@ -1,0 +1,14 @@
+{
+  "src/index.tsx": {
+    "file": "assets/main.fc74076c.js",
+    "src": "src/index.tsx",
+    "isEntry": true,
+    "css": [
+      "assets/index.b28eaff8.css"
+    ]
+  },
+  "src/index.css": {
+    "file": "assets/index.b28eaff8.css",
+    "src": "src/index.css"
+  }
+}
