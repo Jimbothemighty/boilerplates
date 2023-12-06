@@ -56,6 +56,10 @@ export default defineConfig({
   server: {
     open: true,
   },
+  esbuild: {
+    minifyIdentifiers: false,
+    keepNames: true,
+  },
   plugins: [
     svgr(),
     viteEdUiHmrPlugin()
