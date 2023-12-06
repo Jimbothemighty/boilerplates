@@ -1,21 +1,24 @@
-interface String {
-    hashValue(): number;
-}
+// import { edom } from "~/assets/js/lib.edom"
 
-interface Element {
-    edpEmpty(message: any): Element;
-	edpAppend(message: any): Element;
-	edpFind(message: string): NodeListOf<any>;
-}
+// /* eslint-disable no-extend-native */
+// interface String {
+//     hashValue(): number;
+// }
 
-interface DocumentFragment {
-	edpAppend(message: any): DocumentFragment;
-}
+// interface Element {
+//     edpEmpty(message: any): Element;
+// 	edpAppend(message: any): Element;
+// 	edpFind(message: string): NodeListOf<any>;
+// }
 
-interface NodeList {
-	edpAppend(message: any): NodeList;
-}
+// interface DocumentFragment {
+// 	edpAppend(message: any): DocumentFragment;
+// }
 
-interface Node {
-	edpAppend(message: any): Node;
-}
+// interface NodeList {
+// 	edpAppend(message: any): NodeList;
+// }
+
+// interface Node {
+// 	edpAppend(message: any): Node;
+// }

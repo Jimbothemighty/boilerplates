@@ -1,12 +1,4 @@
-let edAppRootInstance = null
-
-export function createEdAppRoot() {
-	return edAppRootInstance = new EdApp()
-}
-
-export function getEdApp() {
-	return edAppRootInstance
-}
+import { edpAppend, hashValue } from "~/assets/js/eDom"
 
 class EdApp {
 	rootElement = null
@@ -59,13 +51,13 @@ class EdApp {
 	}
 
 	getComponent(ChosenClass, props, domLocation) {
-		let hash = (ChosenClass.toString() + JSON.stringify(props) + domLocation).hashValue()
+		let hash = hashValue(ChosenClass.toString() + JSON.stringify(props) + domLocation)
 		let element = this.#components[hash]
 		return element || false
 	}
 
 	registerComponent(ChosenClass, props, domLocation) {
-		let hash = (ChosenClass.toString() + JSON.stringify(props) + domLocation).hashValue()
+		let hash = hashValue(ChosenClass.toString() + JSON.stringify(props) + domLocation)
 		this.#components[hash] = new ChosenClass(props)
 		return this.#components[hash]
 	}
@@ -81,6 +73,8 @@ class EdApp {
 }
 
 class EdAppPushManager {
+	listeningObjects : object
+
 	constructor() {
 		this.listeningObjects = {}
 	}
@@ -135,7 +129,7 @@ class EdAppPushManager {
 	}
 }
 
-export const EdUiComponent = function(chosenClass, props) {
+export const EdUiComponent = function<Type>(chosenClass : Type, props? : object) {
 	let _type = `EdUiComponent`
 	let _chosenClass = chosenClass
 	let _props = props
@@ -293,6 +287,16 @@ export class EdUiElement {
 				}
 			}
 		}
-		this.rootElement.edpAppend(appendElements)
+		edpAppend(this.rootElement, appendElements)
 	}
+}
+
+let edAppRootInstance : EdApp = null
+
+export function createEdAppRoot() : EdApp {
+	return edAppRootInstance = new EdApp()
+}
+
+export function getEdApp() : EdApp {
+	return edAppRootInstance
 }

@@ -1,4 +1,4 @@
-import { getEdApp, EdUiElement, EdUiComponent } from "~/assets/js/EdUi.js"
+import { getEdApp, EdUiElement, EdUiComponent } from "~/assets/js/EdUi.ts"
 
 class FooterColumnElement extends EdUiElement {
 	render(props) {
